@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+div {
+    margin-bottom: 15px;
+    padding: 4px 12px;
+}
+
+.success {
+    background-color: #ddffdd;
+    border-left: 6px solid #4CAF50;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="success"><p>{{pred}}</p></div>
+
+<h2 align="center">Predict Insurance Bill</h2>
+
+<div class="container">
+  <form action="{{ url_for('predict') }}" method="POST">
+    <label for="fname">Age</label>
+    <input type="text" name="age" placeholder="Your Age..">
+
+    <label for="lname">Sex</label>
+    <input type="text" name="sex" placeholder="Your Sex..">
+
+    <label for="lname">BMI</label>
+    <input type="text" name="bmi" placeholder="Your bmi..">
+
+    <label for="lname">Children</label>
+    <input type="text" name="Children" placeholder="Total Children..">
+
+    <label for="lname">Smoker</label>
+    <input type="text" name="Smoker" placeholder="Are U Smoker..">
+
+    <label for="lname">Region</label>
+    <input type="text" name="Region" placeholder="Your Region..">
+
+
+    <input type="submit" value="Predict">
+  </form>
+</div> 
+</body>
+</html>
